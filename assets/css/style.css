@@ -1,0 +1,42 @@
+body {
+    margin: 2% 5%;
+    background: #F0E6E6;
+}
+
+.jumbotron {
+    text-align: center;
+    background: #7EC5A5;
+    color: #D3D7D9;
+}
+
+h1, p {
+    text-shadow: 0 0 20px #000000;
+}
+
+td {
+    border-right: 2px solid ;
+    border-bottom: 2px solid ;
+    border-top: 0;
+}
+
+th {
+    text-align: center;
+    border-bottom: 2px solid #000000 ;
+    border-right: 2px solid #000000 ;
+
+}
+
+th:last-child, td:last-child {
+    border-right: none !important;
+}
+
+.panel, .jumbotron {
+    border: 5px solid #D3D7D9 !important;
+    border-radius: 10px;
+    color: #ffd800;
+    background-color:#000000;
+}
+
+td {
+    text-align: center;
+}
