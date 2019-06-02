@@ -15,21 +15,23 @@ $(document).ready(function () {
     function runningClock() {
         time = moment().format("hh:mm:ss A");
         $("#time").text(time);
-    }
+    };
     //  setInterval function
     clock = setInterval(runningClock , 1000);
 
-  
+    
       // Initialize Firebase
-      var config = {
-          apiKey: "AIzaSyBfSNkffTACKCdvxulZ8ZqgdQZ7Rq_HenE",
-          authDomain: "train-scaduler.firebaseapp.com",
-          databaseURL: "https://train-scaduler.firebaseio.com",
-          projectId: "train-scaduler",
-          storageBucket: "train-scaduler.appspot.com",
-          messagingSenderId: "1018608400193"
+      var firebaseConfig = {
+        apiKey: "AIzaSyBnu8Id_aXYlvqVPdABxp0WVfD6QKQ5OYE",
+    authDomain: "train-scheduler-e30d8.firebaseapp.com",
+    databaseURL: "https://train-scheduler-e30d8.firebaseio.com",
+    projectId: "train-scheduler-e30d8",
+    storageBucket: "train-scheduler-e30d8.appspot.com",
+    messagingSenderId: "1001181290207",
+    appId: "1:1001181290207:web:6758dcbe85bd9775",
       };
-    firebase.initializeApp(config);
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
 
     database = firebase.database();
 
@@ -79,7 +81,7 @@ $(document).ready(function () {
         var firstArrivalConverted = moment(snapArrival , "HH:mm A").subtract(1, "years");
         //  compare now and First Arrival
         var diff = moment().diff(moment(firstArrivalConverted) , "minutes");
-        var left = diff % snapFreq;
+        var left = newFunction(diff, snapFreq);
         //  How long till train
         var timeLeft = snapFreq - left;
         var newArrival = moment().add(timeLeft , "m").format("HH:mm: A");
@@ -87,7 +89,7 @@ $(document).ready(function () {
         $("#table-info").append("<tr><td>" + snapName +"</td><td>" + snapDest + "</td><td>" + snapFreq + "</td><td>" +
                                     newArrival + "</td><td>" + timeLeft + "</td></tr>");
 
-
+console.log("don")
     });
     // clear of the fields
     function clear() {
@@ -95,8 +97,12 @@ $(document).ready(function () {
         $("#destinationInput").val("");
         $("#firstTrainTimeInput").val("");
         $("#frequencyInput").val("");
-    }
+    };
 
 
 
 });
+function newFunction(diff, snapFreq) {
+    return diff % snapFreq;
+};
+

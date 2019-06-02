@@ -39,10 +39,12 @@
         </table>
     </div>
 
+
     <!-- New Train panel contents -->
     <div class="panel panel-primary">
         <div class="jumbotron">Add A Train</div>
         <div class="panel-body">
+            <form>
             <div class="form-group">
                 <label for="trainNameInput"> Train Name </label>
                 <input type="text" class="form-control" id="trainNameInput" placeholder="Enter Train Name Here"/>
@@ -64,13 +66,16 @@
             </div>
 
             <button type="submit" class="btn btn-primary" id="submitButton" >Submit</button>
+        </form>
 
         </div>
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/momentjs/2.18.1/moment.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-database.js"></script>
     <script src="assets/javascript/app.js"></script>
 
 </body>
